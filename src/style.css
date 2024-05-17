@@ -1,0 +1,239 @@
+/* Start Table */
+.module-container {
+  display: relative;
+  width: 100%;
+  overflow: auto;
+
+}
+
+.module-table {
+  table-layout: fixed;
+  width: 100%;
+  caption-side: bottom;
+  font-size: 0.875rem
+  ;
+  line-height: 1.25rem;
+}
+
+.module-thead tr {
+  border-bottom-width: 1px;
+}
+
+.module-thead--th {
+  height: 3rem
+    /* 48px */
+  ;
+  padding-left: 1rem
+    /* 16px */
+  ;
+  padding-right: 1rem
+    /* 16px */
+  ;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 500;
+}
+.module-thead--sorting{
+  margin-left: 0.5rem;
+  color: hsl(240 10% 3.9%);
+}
+
+.module-body tr:last-child {
+  border-width: 0px;
+}
+
+.module-body--tr {
+  border-bottom-width: 1px;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.module-body--td {
+  padding: 1rem
+    /* 16px */
+  ;
+  vertical-align: middle;
+
+}
+
+.module-footer {
+  font-weight: 500;
+  background-color: hsl(240 10% 3.9%);
+  border-top-width: 1px;
+  padding: 1rem;
+}
+
+/* .module-footer > tr:last-child {
+  border-bottom-width: 0px;
+} */
+.module-footer--show {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  justify-content: end;
+  padding: 0.5rem 1rem
+    /* 16px */
+  ;
+  color: hsl(0, 0%, 98%);
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+/* End Table */
+.module-pagination-select {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* Start Pagination */
+.module-pagination {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  justify-content: end;
+  /* padding:  1rem16px; */
+}
+
+.module-pagination--ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.25rem
+    /* 4px */
+  ;
+}
+
+.module-pagination--li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  width: 2.5rem;
+  height: 2.5rem;
+
+}
+
+.module-pagination--link--is-active {
+  outline-style: solid;
+  border: 3px solid hsl(240 3.7% 15.9%);
+  background-color: hsl(240 10% 3.9%);
+  border-radius: 0.25rem;
+}
+
+.module-pagination--link:hover {
+  background-color: hsl(240 3.7% 15.9%);
+  border-radius: 0.25rem;
+}
+
+.module-pagination--span {
+  color: hsl(0, 0%, 98%);
+  font-weight: 500;
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+/* End Pagination */
+/* Start Select */
+.module-select {
+  display: flex;
+  height: 2.5rem
+    /* 40px */
+  ;
+  background-color: hsl(240 10% 3.9%);
+  padding-left: 0.75rem
+    /* 12px */
+  ;
+  padding-right: 0.75rem
+    /* 12px */
+  ;
+  padding-top: 0.5rem
+    /* 8px */
+  ;
+  padding-bottom: 0.5rem
+    /* 8px */
+  ;
+  font-size: 0.875rem
+    /* 14px */
+  ;
+  line-height: 1.25rem
+    /* 20px */
+  ;
+  border-radius: 0.25rem;
+  color: hsl(0, 0%, 98%);
+  border: 3px solid hsl(240 3.7% 15.9%);
+  --tw-ring-offset-color: hsl(240 3.7% 15.9%);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* End Select */
+/* Start SearchBar */
+.module-searchbar {
+
+  font-weight: 500;
+  background-color: hsl(240 10% 3.9%);
+  border-bottom-width: 1px;
+  padding: 1rem;
+}
+
+.module-searchbar--form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  max-width: 24rem
+    /* 384px */
+  ;
+}
+
+.module-searchbar--form> :not([hidden])~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.module-searchbar--button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.25rem;
+  height: 2.5rem;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: hsl(210 40% 96.1%);
+  color: hsl(210 40% 98%);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.module-searchbar--button:hover {
+  background-color: hsl(210 40% 96.1%/90);
+  color: #000;
+}
+
+.module-searchbar--input {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  border-width: 1px;
+  border-color: hsl(214.3 31.8% 91.4%);
+  border-radius: 0.25rem;
+  background-color: hsl(0 0% 100%);
+  padding: 0.75rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-ring-offset-color:hsl(0 0% 100%);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* End SearchBar */

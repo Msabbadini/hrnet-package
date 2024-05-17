@@ -1,0 +1,28 @@
+{
+  "name": "hrnet-ts-table",
+  "description": "Table package for HRNet Project Openclassroom",
+  "version": "0.0.3",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files":[
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && npm run build:css",
+    "build:css": "postcss src/style.css -o dist/style.css"
+  },
+  "keywords": [],
+  "author": "msabbadini",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "react": "^18.2.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}
