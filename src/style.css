@@ -1,25 +1,23 @@
 /* Start Table */
-.module-container {
+.hrnet-table__container {
   display: relative;
   width: 100%;
   overflow: auto;
-
 }
 
-.module-table {
+.hrnet-table__main {
   table-layout: fixed;
   width: 100%;
   caption-side: bottom;
-  font-size: 0.875rem
-  ;
+  font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.module-thead tr {
+.hrnet-table__thead__tr {
   border-bottom-width: 1px;
 }
 
-.module-thead--th {
+.hrnet-table__thead__th {
   height: 3rem
     /* 48px */
   ;
@@ -33,23 +31,24 @@
   vertical-align: middle;
   font-weight: 500;
 }
-.module-thead--sorting{
+
+.hrnet-table__thead__sorting {
   margin-left: 0.5rem;
-  color: hsl(240 10% 3.9%);
+  color: black;
 }
 
-.module-body tr:last-child {
+.hrnet-table__body tr:last-child {
   border-width: 0px;
 }
 
-.module-body--tr {
+.hrnet-table__body__tr {
   border-bottom-width: 1px;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.module-body--td {
+.hrnet-table__body__td {
   padding: 1rem
     /* 16px */
   ;
@@ -57,51 +56,38 @@
 
 }
 
-.module-footer {
+.hrnet-table__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
   font-weight: 500;
-  background-color: hsl(240 10% 3.9%);
+  background-color: black;
   border-top-width: 1px;
-  padding: 1rem;
 }
 
-/* .module-footer > tr:last-child {
-  border-bottom-width: 0px;
-} */
-.module-footer--show {
+.hrnet-table__footer__show {
   display: flex;
   margin: auto;
   width: 100%;
   justify-content: end;
-  padding: 0.5rem 1rem
-    /* 16px */
-  ;
-  color: hsl(0, 0%, 98%);
+  color: white;
   font-weight: 500;
   font-size: .875rem;
   line-height: 1.25rem;
 }
 
-/* End Table */
-.module-pagination-select {
+/* End hrnet-table */
+.hrnet-table__pagination__select {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: 1rem;
-  padding: 0 1rem;
 }
 
 /* Start Pagination */
-.module-pagination {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  justify-content: end;
-  /* padding:  1rem16px; */
-}
-
-.module-pagination--ul {
+.hrnet-table__pagination__ul {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -110,7 +96,7 @@
   ;
 }
 
-.module-pagination--li {
+.hrnet-table__pagination__li {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -120,20 +106,20 @@
 
 }
 
-.module-pagination--link--is-active {
+.hrnet-table__pagination__link--is-active {
   outline-style: solid;
-  border: 3px solid hsl(240 3.7% 15.9%);
-  background-color: hsl(240 10% 3.9%);
+  border: 3px solid black;
+  background-color: black;
   border-radius: 0.25rem;
 }
 
-.module-pagination--link:hover {
-  background-color: hsl(240 3.7% 15.9%);
+.hrnet-table__pagination__link:hover {
+  background-color: black;
   border-radius: 0.25rem;
 }
 
-.module-pagination--span {
-  color: hsl(0, 0%, 98%);
+.hrnet-table__pagination__span {
+  color: white;
   font-weight: 500;
   font-size: .875rem;
   line-height: 1.25rem;
@@ -141,12 +127,12 @@
 
 /* End Pagination */
 /* Start Select */
-.module-select {
+.hrnet-table__select {
   display: flex;
   height: 2.5rem
     /* 40px */
   ;
-  background-color: hsl(240 10% 3.9%);
+  background-color: black;
   padding-left: 0.75rem
     /* 12px */
   ;
@@ -166,72 +152,65 @@
     /* 20px */
   ;
   border-radius: 0.25rem;
-  color: hsl(0, 0%, 98%);
-  border: 3px solid hsl(240 3.7% 15.9%);
-  --tw-ring-offset-color: hsl(240 3.7% 15.9%);
+  color: white;
+  border: 3px solid black;
+  --tw-ring-offset-color: black;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
 /* End Select */
 /* Start SearchBar */
-.module-searchbar {
-
+.hrnet-table__searchbar {
   font-weight: 500;
-  background-color: hsl(240 10% 3.9%);
+  background-color: black;
   border-bottom-width: 1px;
   padding: 1rem;
 }
 
-.module-searchbar--form {
+.hrnet-table__searchbar__form {
   display: flex;
   width: 100%;
   align-items: center;
-  max-width: 24rem
-    /* 384px */
-  ;
+  max-width: 24rem;
+  gap: 1rem;
 }
 
-.module-searchbar--form> :not([hidden])~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.module-searchbar--button {
+.hrnet-table__searchbar__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   border-radius: 0.25rem;
   height: 2.5rem;
-  padding: 1rem 0.5rem;
+  padding: 0rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  background-color: hsl(210 40% 96.1%);
-  color: hsl(210 40% 98%);
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  background-color: black;
+  color: white;
+  transition: all 500ms ease-in-out;
+  outline: none;
+  border: none;
 }
 
-.module-searchbar--button:hover {
-  background-color: hsl(210 40% 96.1%/90);
-  color: #000;
+.hrnet-table__searchbar__button:hover {
+  background-color: white;
+  color: black;
 }
 
-.module-searchbar--input {
+.hrnet-table__searchbar__input {
   display: flex;
   width: 100%;
   height: 2.5rem;
   border-width: 1px;
-  border-color: hsl(214.3 31.8% 91.4%);
+  border-color: white;
   border-radius: 0.25rem;
-  background-color: hsl(0 0% 100%);
-  padding: 0.75rem 0.5rem;
+  color: black;
+  background-color: white;
+  padding: 0 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  --tw-ring-offset-color:hsl(0 0% 100%);
+  --tw-ring-offset-color: white;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }

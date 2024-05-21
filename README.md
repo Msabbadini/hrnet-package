@@ -24,6 +24,7 @@ import "hrnet-ts-table/dist/index.css";
 After the imports, at the table header level, here is what must be provided with the possible options:
 
 ```code
+// Example
  const columns:Array<ColumnHeader> = [
         { sortKey: "firstName", title: "First Name",  },
         { sortKey: "lastName", title: "Last Name" },
@@ -45,9 +46,10 @@ After the imports, at the table header level, here is what must be provided with
 | sort | allows you to provide a sort function, by default there is a sort function on the string type |
 | enableSort | by default allows sorting but possible to set false to prevent sorting |
 
-Afterwards for the component you must provide it:
+Component signature looks alike:
 
 ```code
+// Example
  <Table columns={columns} entries={dataList} pagesCutCount={20} enablePagination={true}  />
 ```
 
@@ -105,6 +107,13 @@ const filterStreet = (a: string, b: string) => {
         return dateA.getTime() - dateB.getTime()
     }
 
+   const filterZipCode = (a: string, b: string) => {
+        const zipA = a.split("-").join("").split(" ").join("")
+        const zipB = b.split("-").join("").split(" ").join("")
+        return +zipA - (+zipB)
+
+    }
+
     const columns:Array<ColumnHeader> = [
         { sortKey: "firstName", title: "First Name",  },
         { sortKey: "lastName", title: "Last Name" },
@@ -114,7 +123,7 @@ const filterStreet = (a: string, b: string) => {
         { sortKey: "street", title: "Street", sort:filterStreet,  },
         { sortKey: "city", title: "City", enableSort: false},
         { sortKey: "state", title: "State" },
-        { sortKey: "zipCode", title: "Zip Code", type: "number" },
+        { sortKey: "zipCode", title: "Zip Code", sort:filterZipCode },
     ]
 ```
 
@@ -123,6 +132,31 @@ and add to component:
 ```code
  <Table columns={columns} entries={dataList} />
 ```
+
+## CSS
+| Classname | Reference  |
+| ------ | ------ |
+|hrnet-table__container | |
+|hrnet-table__main | |
+|hrnet-table__thead__tr |  |
+|hrnet-table__thead__th |  |
+| hrnet-table__thead__sorting | The icon indicates the direction of the sort column   |
+| hrnet-table__body__tr |  |
+| hrnet-table__body__td |  |
+| hrnet-table__footer |  |
+| hrnet-table__footer__show |  |
+| hrnet-table__pagination__select |  |
+| hrnet-table__pagination__ul |  |
+| hrnet-table__pagination__li |  |
+| hrnet-table__pagination__link--is-active |  |
+| hrnet-table__pagination__span |  |
+| hrnet-table__select |  |
+| hrnet-table__searchbar |  |
+| hrnet-table__searchbar__form |  |
+| hrnet-table__searchbar__input |  |
+| hrnet-table__searchbar__button |  |
+
+[Lien Github CSS](https://github.com/Msabbadini/hrnet-package/blob/main/src/style.css)
 
 ## Github
 

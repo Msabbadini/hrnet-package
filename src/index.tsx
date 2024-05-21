@@ -45,20 +45,20 @@ const HeaderCell = ({ columnHeader, sorting, onSort }: HeaderCellProps) => {
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<th
 			key={columnHeader.sortKey}
-			className='module-thead--th'
+			className='hrnet-table__thead__th'
 			onClick={() => columnHeader.enableSort && onSort({ column: columnHeader, order: isAscSorting ? "desc" : "asc" })}
 		>
 			{columnHeader.title}
-			{isDescSorting && <span className="module-thead--sorting">▼</span>}
-			{isAscSorting && <span className="module-thead--sorting">▲</span>}
+			{isDescSorting && <span className="hrnet-table__thead__sorting">▼</span>}
+			{isAscSorting && <span className="hrnet-table__thead__sorting">▲</span>}
 		</th>
 	);
 };
 
 const Header = ({ columns, sorting, onSort }: HeaderProps) => {
 	return (
-		<thead className="module-thead">
-			<tr>
+		<thead className="hrnet-table__thead">
+			<tr className='hrnet-table__thead__tr'>
 				{columns.map((column: any) => (
 					<HeaderCell
 						key={column.sortKey}
@@ -74,14 +74,14 @@ const Header = ({ columns, sorting, onSort }: HeaderProps) => {
 
 const Content = ({ entries, columns }: ContentProps) => {
 	return (
-		<tbody className="module-body">
+		<tbody className="hrnet-table__body">
 			{entries.map((entry, index) => (
 				<tr key={`table-content-${index}`}
-					className='module-body--tr'
+					className='hrnet-table__body__tr'
 				>
 					{columns.map((column) => (
 						<td 
-						className="module-body--td"
+						className="hrnet-table__body__td"
 						key={column.sortKey}
 
 						>{entry[column.sortKey] ?? ""}
@@ -104,17 +104,17 @@ const SearchTable = ({ searchFilter }:any) => {
 		searchFilter('');
 	  }
 	return (
-		<div className="module-searchbar">
-			<form className="module-searchbar--form" onSubmit={submitForm}>
+		<div className="hrnet-table__searchbar">
+			<form className="hrnet-table__searchbar__form" onSubmit={submitForm}>
 				<input
-				className="module-searchbar--input"
+				className="hrnet-table__searchbar__input"
 					type="text"
 					placeholder="Search..."
 					value={searchValue}
 					onChange={(e) => setSearchValue(e.target.value)}
 				/>
-				<button className="module-searchbar--button" type="submit">Search</button>
-				<button className="module-searchbar--button" type="button" onClick={resetForm}>Reset</button>
+				<button className="hrnet-table__searchbar__button" type="submit">Search</button>
+				<button className="hrnet-table__searchbar__button" type="button" onClick={resetForm}>Reset</button>
 			</form>
 		</div>
 	)
@@ -143,10 +143,10 @@ const getPagesCut = ({ pagesCount, pagesCutCount, currentPage }: { pagesCount: n
 
 const PaginationItem = ({ textPage,page, currentPage, onPageChange, isDisabled = false }: { textPage?:string,page: number, currentPage: number, onPageChange: (page: number) => void, isDisabled?: boolean }) => {
 	const isActive = currentPage === page;
-	const className = isActive ? "module-pagination--link--is-active module-pagination--li " : "module-pagination--link module-pagination--li";
+	const className = isActive ? "hrnet-table__pagination__link--is-active hrnet-table__pagination__li" : "hrnet-table__pagination__link hrnet-table__pagination__li";
 	return (
 		<li className={className} onClick={() => !isDisabled && !isActive && onPageChange(page)}>
-			<span className="module-pagination--span">{textPage ?? page}</span>
+			<span className="hrnet-table__pagination__span">{textPage ?? page}</span>
 		</li>
 	)
 }
@@ -166,12 +166,12 @@ export const Pagination = ({ currentPage, total, limit, onPageChange, onLimitCha
 		onLimitChange(Number(event.currentTarget.value));
 	};
 	return (
-		<div className="module-footer">
-			<div className="module-footer--show">
+		<div className="hrnet-table__footer">
+			<div className="hrnet-table__footer__show">
 				<p>Show entries {firstEntryIndex}-{lastEntryIndex} of {total}</p>
 			</div>
-			<div className="module-pagination-select">
-				<select onChange={handleLimitChange} value={limit} className="module-select">
+			<div className="hrnet-table__pagination__select">
+				<select onChange={handleLimitChange} value={limit} className="hrnet-table__select">
 					<option value="5">5</option>
 					<option value="10">10</option>
 					<option value="20">20</option>
@@ -180,8 +180,8 @@ export const Pagination = ({ currentPage, total, limit, onPageChange, onLimitCha
 					<option value="0">all</option>
 
 				</select>
-				<div className="module-pagination">
-				<ul className="module-pagination--ul">
+				<div>
+				<ul className="hrnet-table__pagination__ul">
 					{currentPage > pagesCutCount - Math.floor(pagesCutCount / 2) && (
 						<>
 							<PaginationItem
@@ -315,9 +315,9 @@ const Table = ({ columns, entries, pagesCutCount = 5, enablePagination = true }:
 	}, [currentPage, entriesPerPage, filteredEntries]);
 
 	return (
-		<div className="module-container">
+		<div className="hrnet-table__container">
 			<SearchTable searchFilter={handleSearch} />
-			<table className="module-table" >
+			<table className="hrnet-table__main" >
 				<Header columns={currentColumns} sorting={sorting} onSort={handleSort} />
 				<Content entries={currentEntries} columns={currentColumns} />
 			</table>
