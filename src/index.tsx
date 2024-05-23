@@ -186,13 +186,13 @@ export const Pagination = ({ currentPage, total, limit, onPageChange, onLimitCha
 						<>
 							<PaginationItem
 								textPage="First"
-								page={1}
+								page={0}
 								currentPage={currentPage}
 								onPageChange={() => onPageChange(1)}
 								isDisabled={isFirstPage} />
 							<PaginationItem
 								textPage="Prev"
-								page={1}
+								page={0}
 								currentPage={currentPage}
 								onPageChange={() => onPageChange(currentPage - 1)}
 								isDisabled={isFirstPage} />
@@ -210,14 +210,14 @@ export const Pagination = ({ currentPage, total, limit, onPageChange, onLimitCha
 						<>
 							<PaginationItem
 								textPage="Next"
-								page={1}
+								page={0}
 								currentPage={currentPage}
 								onPageChange={() => onPageChange(currentPage + 1)}
 								isDisabled={isLastPage}
 							/>
 							<PaginationItem
 								textPage="Last"
-								page={1}
+								page={0}
 								currentPage={currentPage}
 								onPageChange={() => onPageChange(pagesCount)}
 								isDisabled={isLastPage}

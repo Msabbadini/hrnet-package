@@ -103,18 +103,17 @@
   white-space: nowrap;
   width: 2.5rem;
   height: 2.5rem;
-
+  cursor: pointer;
 }
 
 .hrnet-table__pagination__link--is-active {
   outline-style: solid;
-  border: 3px solid black;
-  background-color: black;
+  border: 1px solid white;
   border-radius: 0.25rem;
 }
 
 .hrnet-table__pagination__link:hover {
-  background-color: black;
+  background-color: #333;
   border-radius: 0.25rem;
 }
 
